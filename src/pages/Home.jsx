@@ -11,22 +11,17 @@ export default function Home() {
 
   return (
     <section className='w-full h-screen relative'>
-      <div className="absolute inset-0 flex justify-center items-center z-10 w-full h-screen">    
-        <div className="grid justify-center grid-cols-1">
-          <div className="mehdi w-fit h-fit p-5 rounded-lg text-orange-950 text-3x-l">
-             <a href="https://mehditohidi.com" target="_blank">Hello! I'm Mehdi Tohidi.</a>
-          </div>
-        </div>
-      </div>
-      <Canvas shadows dpr={[1, 2]} camera={{ fov: 50, position: [3, 3, 3]}}>
+     
+      <Canvas shadows camera={{ fov: 30, position: [10,10,20]}}>
         <Suspense fallback={null}>
           <Stage controls={ref} preset="rembrandt" intensity={1}  environment="city">
-            false
+            
           <Model />
-            false
+            
           </Stage>
         </Suspense>
-        <OrbitControls ref={ref} autoRotate />
+        <OrbitControls ref={ref} enablePan={true} enableZoom={true } enableRotate= {true} />
+
       </Canvas>
    </section>
   )
